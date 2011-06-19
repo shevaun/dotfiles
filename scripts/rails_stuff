@@ -1,0 +1,23 @@
+#!/bin/bash
+# Find files recursively in/under the current directory
+function findin()
+{
+  find . -exec grep $@ '{}' \; -print
+}
+# Rails 2 and Rails 3 console
+function rc {
+  if [ -e "./script/console" ]; then
+      ./script/console $@
+  else
+    rails console $@
+  fi
+}
+# Rails 2 and Rails 3 server
+function rs {
+  if [ -e "./script/server" ]; then
+      thin start $@
+#      ./script/server $@
+  else
+    unicorn_rails -l 3000 $@
+  fi
+}

@@ -1,0 +1,2 @@
+#!/bin/bash
+gem install autotest-rails autotest-fsevent autotest-growl redgreen
