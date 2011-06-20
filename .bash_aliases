@@ -18,3 +18,8 @@ alias sc='script/console'
 alias ss='script/server'
 alias sg='script/generate'
 
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
