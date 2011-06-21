@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+cmds=[]
+re=Regexp.new(ARGV[1])
+Dir.glob("**/#{ARGV[0]}") do |file|
+  cmds << "bzr mv #{file} #{file.sub(re,ARGV[2])}"
+end
+cmds=cmds.join("\n")
+puts "", cmds
+print "\nConfirm? (yes/no) "
+a=$stdin.gets
+if a.chop.downcase == "yes"
+  system(cmds)
+else
+  puts "aborted"
+end

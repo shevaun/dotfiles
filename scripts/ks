@@ -1,0 +1,3 @@
+#!/bin/bash
+pids=`pgrep unicorn_rails`
+kill -9 $pids

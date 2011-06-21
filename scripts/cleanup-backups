@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -e "Are you sure? (yes/no)\c"
+read yes
+if [ "$yes" = "yes" ];then
+    find . -name '*~' -exec rm {} \;
+fi

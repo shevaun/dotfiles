@@ -1,0 +1,66 @@
+#!/usr/bin/ruby
+require 'diff/lcs'
+require 'diff/lcs/string'
+
+a=`bzr st`.each_line
+
+puts
+
+old=[]
+new=[]
+begin
+  while line=a.next
+    if line =~ /^removed:/
+      print line
+      while (line=a.next) =~ /^  /
+        print line
+        old << line.strip
+      end
+    end
+    if line =~ /^unknown:/
+      print line
+      while (line=a.next) =~ /^  /
+        print line
+        new << line.strip
+      end
+      break
+    end
+  end
+rescue StopIteration
+end
+
+
+puts
+
+return if new.empty?
+
+old=old.map {|o|
+  [new.map {|n| o.diff(n).flatten.size }.sort.first, o]
+}.sort
+
+
+old.each {|(_,o)|
+  nn=new.map {|n| [o.diff(n).flatten.size, n] }.sort
+  while !nn.empty?
+    print "  #{o}  =>  #{nf=nn.first[1]}  ? (yes/no/skip/quit) "
+    while case gets
+          when /^y(es)?$/i
+            system('bzr','mv','--after',o,nf)
+            new.reject!{|f| f==nf}
+            nn=[]
+            false
+          when /^no?$/i
+            nn.shift
+            false
+          when /^s(kip)?$/i
+            nn=[]
+            false
+          when /^q(uit)?$/
+            exit 1
+          else
+            print "type y or n or q: "
+            true
+          end
+    end
+  end
+}

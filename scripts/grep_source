@@ -1,0 +1,16 @@
+#!/usr/bin/ruby
+require 'set'
+includes=%w{.rb html .erb .yml .scss .css .sh .rake .coffee .js .[ch] .java .xml .jsp .feature .el .tex}
+excludes=%w{.#*}
+exclude_file=File.exist?('.search_ignore') ? ['--exclude-from=.search_ignore'] : []
+
+demis=%w{public/ db/ vendor script/ doc/}
+exclude_dir=%w{tmp/ log/}.to_set
+dirs=Dir["*/"].reject{|d| exclude_dir.include? d }.sort{|a,b| demis.include?(a) ? (demis.include?(b) ? demis.index(a)<=>demis.index(b) : 1 ) : (demis.include?(b) ? -1 : a<=>b)}
+system(*(%w{grep -n -w -e}+[ARGV[0],'/dev/null']+Dir['Gemfile',*includes.map{|a| "*#{a}"}]))
+system(*(%w{rgrep -n -w -e }+[ARGV[0]]+includes.map{|i| "--include=*#{i}"} + exclude_file + excludes.map{|i| "--exclude=#{i}"}+dirs)) unless dirs.empty?
+if File.exist?(gem_tags="#{ENV['HOME']}/tmp/gem-tags")
+  puts File.open(gem_tags) {|io| io.grep /^.*\.rb:\d+:.*\b#{ARGV[0]}\b/ }.join
+end
+
+

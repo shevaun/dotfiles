@@ -1,0 +1,3 @@
+#!/usr/bin/ruby
+File.open("/tmp/abc","w+") {|io| io.puts ARGV.inspect }
+exec *["emacsclient", "-ne", "(rails-find-and-goto-error \"#{ARGV.shift}\")"]

@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+puts "  #{Dir.pwd}:"
+list=[]
+IO.popen("find . -regex '.*/\\(\\..*\\|tmp\\|target\\)' -prune -o \\( -iname '*#{ARGV[0].gsub("'","?")}*' ! -iwholename '*/.*' -print \\)") {|p|
+  p.each {|l|
+    l.chop!
+    list << l if l !~ /~$/
+  }
+}
+IO.popen(['ls', '-ld']+list) do |io|
+  print io.read.gsub(/^/m,'  ').gsub(/^  d/,"\n  d")
+end
+

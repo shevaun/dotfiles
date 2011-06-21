@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+bzr "$@"  && exit 0
+bzr merge
+bzr ci -m 'merge'
+bzr "$@"

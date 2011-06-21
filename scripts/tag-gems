@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# greps the latest version of each gem for def, class, module and constants
+# assumes you have a tmp dir under your home dir
+# you can then grep this file in emacs for definitions and then you can click
+# on them to go to the file
+#
+last=[]
+results=Gem.path.map do |dir|
+  Dir["#{dir}/gems/*-[0-9].[0-9]*/lib"].sort{|a,b|b<=>a}.reject do |gem|
+    parts=gem.split('-')
+    if last[0..-2] == parts[0..-2]
+      true
+    else
+      last=parts
+      false
+    end
+  end.sort{|a,b|a.casecmp b}
+end
+
+args=%w{rgrep -n -e ^\\s*\\(\\(class\\|module\\)\\s\\s*[A-Z]\\|def\\s\\|[:A-Z][:A-Z_0-9]*\\s*=\\)}+results.flatten
+STDOUT.reopen("#{ENV['HOME']}/tmp/gem-tags",'w')
+exec *args

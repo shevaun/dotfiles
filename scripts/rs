@@ -1,0 +1,8 @@
+#!/bin/bash
+pids=`pgrep unicorn_rails`
+if [ -n "$pids" ]; then
+    echo "Killing server with pids: $pids"
+    kill -9 $pids
+fi
+echo 'Starting server...'
+unicorn_rails -p 3000 -D

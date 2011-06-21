@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$*" = "" ];then
+    emacsclient -n -a emacs ~/src &
+else
+    emacsclient -n -a emacs "$@" &
+fi
