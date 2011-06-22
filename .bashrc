@@ -88,4 +88,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 fi
-[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "/home/shevaun/.rvm/scripts/rvm" ]] && source "/home/shevaun/.rvm/scripts/rvm"  # This loads RVM into a shell session.
