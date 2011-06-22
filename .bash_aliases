@@ -20,3 +20,5 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias ber="bundle exec rake"
+alias zbr="bzr"
