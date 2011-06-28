@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
 
+export PATH=$PATH:$HOME/scripts
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups:ignorespace
 # ... and ignore same sucessive entries.
@@ -88,4 +90,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 fi
-[[ -s "/home/shevaun/.rvm/scripts/rvm" ]] && source "/home/shevaun/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
