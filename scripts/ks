@@ -1,3 +1,9 @@
 #!/bin/bash
+#echo "Killing unicorn server"
+#killall -9 unicorn_rails
+
 pids=`pgrep unicorn_rails`
-kill -9 $pids
+if [ -n "$pids" ]; then
+    echo "Killing unicorn server with pids: $pids"
+    kill -9 $pids
+fi

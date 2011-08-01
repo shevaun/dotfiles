@@ -1,6 +1,5 @@
 #!/bin/bash
-echo "Killing unicorn server"
-killall -9 unicorn_rails
+`ks`
 echo 'Starting new server on port 3000...'
 unicorn_rails -p 3000 -D
 tail -f log/development.log
