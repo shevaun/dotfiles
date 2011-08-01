@@ -1,9 +1,5 @@
 #!/bin/bash
-#echo "Killing unicorn server"
-#killall -9 unicorn_rails
+echo "Killing unicorn server"
+`ps axco pid,command | grep unicorn_rails | awk '{ print $1; }' | xargs kill -9`
 
-pids=`pgrep unicorn_rails`
-if [ -n "$pids" ]; then
-    echo "Killing unicorn server with pids: $pids"
-    kill -9 $pids
-fi
+#killall -9 unicorn_rails
