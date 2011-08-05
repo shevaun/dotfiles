@@ -46,7 +46,10 @@ function parse_git_dirty {
 complete -o default -o nospace -F _git_branch gb
 complete -o default -o nospace -F _git_checkout gco
 
-PS1='\[\033[01;36m\]\u@\h\[\033[00m\]:\w$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
+#PS1='\[\033[01;36m\]\u@\h\[\033[00m\]:\w$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
+PS1='\[\033[01;34m\]$(~/.rvm/bin/rvm-prompt) \[\033[01;32m\]\w$(__git_ps1 "\[\e[0;36m\][%s\[\e[0;33m\]$(parse_git_dirty)\[\e[0;36m\]]")\[\033[0m\]\$\[\033[00m\] '
+
+
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
