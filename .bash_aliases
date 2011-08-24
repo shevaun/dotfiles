@@ -23,3 +23,7 @@ alias l='ls -CF'
 alias ber="bundle exec rake"
 alias be="bundle exec"
 alias zbr="bzr"
+
+function pgrep() {
+  grep -nHr $* .                 
+}

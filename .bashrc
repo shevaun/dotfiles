@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
 
+export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
 
 #rbenv
