@@ -22,6 +22,7 @@ alias l='ls -CF'
 
 alias ber="bundle exec rake"
 alias be="bundle exec"
+alias bec="bundle exec cap"
 alias beu="bundle exec unicorn_rails"
 alias zbr="bzr"
 
