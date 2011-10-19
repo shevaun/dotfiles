@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+if ARGV.nil? || ARGV.size < 2
+  puts "Usage: groute.rb PATTERN RAILS_ROOT"
+else
+  search_term = ARGV[0]
+  rails_root = ARGV[1]
+  groutes_store = File.expand_path(rails_root, '.groutes')
+  routes_file = File.expand_path(rails_root, 'config/routes.rb')
+  Dir.chdir File.expand_path(rails_root)
+  puts Dir.pwd
+  unless File.exists?(groutes_store) && File.mtime(groutes_store) > File.mtime(routes_file)
+    `bundle exec rake routes > .groutes`
+  end
+  puts `cat .groutes | grep #{search_term}`
+end
