@@ -1,5 +1,11 @@
 #!/bin/bash
-sh ks
+cleanup(){
+  echo "Killing unicorn server"
+  ps axco pid,command | grep unicorn_rails | awk '{ print $1; }' | xargs kill -9
+}
+
+trap cleanup 2
+
 echo 'Starting new server on port 3000...'
 unicorn_rails -p 3000 -D
 tail -f log/development.log
