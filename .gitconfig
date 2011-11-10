@@ -4,6 +4,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+	quotepath = false
 [alias]
   co = checkout
   ci = commit

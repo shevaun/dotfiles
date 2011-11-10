@@ -7,7 +7,7 @@ fi
 
 cleanup(){
   echo "Killing unicorn server on port $PORT"
-  ps axco pid,command | grep "unicorn_rails .*$PORT" | awk '{ print $1; }' | xargs kill -9
+  ps aux | grep -vw grep | grep "unicorn_rails .*$PORT" | awk '{ print $2; }' | xargs kill -9
 }
 
 trap cleanup 2
