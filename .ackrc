@@ -1,6 +1,4 @@
 --type-add 
-ruby=.pp
-
+ruby=.pp,.prawn
 --nojs
-
 --ignore-dir=coverage
