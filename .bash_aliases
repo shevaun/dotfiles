@@ -29,9 +29,3 @@ alias zbr="bzr"
 function pgrep() {
   grep -nHr $* .                 
 }
-
-#project aliases
-
-alias cdrs="cd ~/src/github/nzpost/rubycas-server"
-alias cdad="cd ~/src/nzpost/addressing"
-alias cdud="cd ~/src/nzpost/user_directory"
