@@ -2,3 +2,4 @@
 ruby=.pp,.prawn
 --nojs
 --ignore-dir=coverage
+--smart-case
