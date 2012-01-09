@@ -8,11 +8,6 @@ if [[ -n "$PS1" ]] ; then
 export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
 
-#rbenv
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#export PATH="${HOME}/.rbenv/shims:${PATH}"
-#source "${HOME}/.rbenv/libexec/../completions/rbenv.bash"
-
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups:ignorespace
 # ... and ignore same sucessive entries.
