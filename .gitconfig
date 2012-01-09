@@ -1,10 +1,11 @@
 [user]
-	name = Shevaun Ryan
-	email = shevaun.ryan@abletech.co.nz
+	name = Shevaun Coker
+	email = shevaun.coker@abletech.co.nz
 [core]
 	autocrlf = input
 	safecrlf = true
 	quotepath = false
+	excludesfile = /Users/shevaun/.gitignore_global
 [alias]
   co = checkout
   ci = commit
@@ -13,6 +14,9 @@
   hist = log --pretty=format:\"%ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
+  ignore = !git update-index --assume-unchanged 
+  unignore = !git update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[a-z]"
 [apply]
 	whitespace = nowarn
 [github]
