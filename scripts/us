@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 if [ -n "$1" ] ; then
   PORT="$1"
 else
@@ -13,5 +13,5 @@ cleanup(){
 trap cleanup 2
 
 echo "Starting unicorn server on port $PORT"
-unicorn_rails -p $PORT -D
+bundle exec unicorn_rails -p $PORT -D
 tail -f log/development.log
