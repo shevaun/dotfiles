@@ -1,5 +1,10 @@
-#project aliases
-
+#nzpost aliases
 alias cdrs="cd ~/src/github/nzpost/rubycas-server"
 alias cdad="cd ~/src/nzpost/addressing"
 alias cdud="cd ~/src/nzpost/user_directory"
+
+#radionz aliases
+alias cdws="cd ~/src/radionz/webstats"
+
+#app aliases
+alias gh="github"

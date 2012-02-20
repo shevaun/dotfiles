@@ -1,2 +1,2 @@
 #!/bin/bash
-env ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+env ARCHFLAGS="-arch x86_64" gem install --no-ri --no-rdoc mysql2 -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
