@@ -41,6 +41,7 @@ unsetopt correct_all
 export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.8/Programs/
 
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump

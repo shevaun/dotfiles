@@ -13,5 +13,5 @@ cleanup(){
 trap cleanup 2
 
 echo "Starting unicorn server on port $PORT"
-bundle exec unicorn_rails -p $PORT -D
+unicorn_rails -p $PORT -D
 tail -f log/development.log

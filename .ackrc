@@ -1,5 +1,6 @@
 --type-add 
 ruby=.pp,.prawn
 --nojs
+--nosql
 --ignore-dir=coverage
 --smart-case
