@@ -3,6 +3,8 @@ alias cdrs="cd ~/src/github/nzpost/rubycas-server"
 alias cdad="cd ~/src/nzpost/addressing"
 alias cdud="cd ~/src/nzpost/user_directory"
 alias cdrf="cd ~/src/nzpost/ratefinder"
+alias cdbs="cd ~/src/nzpost/borderless_shopping"
+alias cdtn="cd ~/src/nzpost/tracking_notification"
 
 #radionz aliases
 alias cdws="cd ~/src/radionz/webstats"
@@ -10,6 +12,8 @@ alias cdel="cd ~/src/radionz/elf"
 
 #misc projects
 alias cdlc="cd ~/src/github/shevaun/livetocode"
+alias cdsd="cd ~/src/fx_networks/staff_directory"
 
 #app aliases
 alias gh="github"
+
