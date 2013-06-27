@@ -32,9 +32,11 @@ source $HOME/.project_aliases
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew gem rails3 rvm src bundler osx)
 
+source ~/.zsh/git_diff_release.sh
+
 source $ZSH/oh-my-zsh.sh
 # disable correction prompt
-unsetopt correct_all
+setopt nocorrectall
 
 # Customize to your needs...
 
@@ -42,6 +44,12 @@ export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.8/Programs/
+export PATH=$PATH:/usr/local/share/python
+
+export HISTCONTROL=ignoredups
+export HISTFILESIZE=100000
+export HISTSIZE=100000
+export HISTTIMEFORMAT="[%d/%m/%y %T] "
 
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump

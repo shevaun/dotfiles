@@ -5,13 +5,24 @@ alias cdud="cd ~/src/nzpost/user_directory"
 alias cdrf="cd ~/src/nzpost/ratefinder"
 alias cdbs="cd ~/src/nzpost/borderless_shopping"
 alias cdtn="cd ~/src/nzpost/tracking_notification"
+alias cdta="cd ~/src/nzpost/tracking-api"
+alias cdla="cd ~/src/nzpost/label-api"
+alias cdaz="cd ~/src/nzpost/anzsic"
+alias cdpp="cd ~/src/nzpost/parcel_pods"
 
 #radionz aliases
 alias cdws="cd ~/src/radionz/webstats"
 alias cdel="cd ~/src/radionz/elf"
+alias cdbr="cd ~/src/radionz/intranet-brad"
+
+#abletech projects
+alias cdse="cd ~/src/abletech/sentry"
+alias cdea="cd ~/src/github/abletech/easy-api"
+alias cddb="cd ~/src/abletech/dashboard"
+alias cdrtd="cd ~/src/abletech/regthedog"
 
 #misc projects
-alias cdlc="cd ~/src/github/shevaun/livetocode"
+alias cdlc="cd ~/src/github/shevaun/enki"
 alias cdsd="cd ~/src/fx_networks/staff_directory"
 
 #app aliases
