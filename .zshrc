@@ -11,6 +11,7 @@ ZSH_THEME="shevaun"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.project_aliases
+source $HOME/.bash_aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,7 +31,7 @@ source $HOME/.project_aliases
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew gem rails3 rvm src bundler osx)
+plugins=(git brew gem rails rvm src bundler osx)
 
 source ~/.zsh/git_diff_release.sh
 
@@ -45,15 +46,17 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.8/Programs/
 export PATH=$PATH:/usr/local/share/python
+export PATH=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="[%d/%m/%y %T] "
 
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
+export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_HEAP_FREE_MIN=100000
+export RUBY_HEAP_SLOTS_INCREMENT=300000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=79000000
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh

@@ -1,9 +1,14 @@
 --type-add=ruby=.pp,.prawn,.rake,Gemfile
---type-add=js=.js.erb,.js.coffee
+--type-add=js=.js.erb,.js.coffee,.js
+--type-set=coffee=.coffee
 --nocss
---nojs
+--type-set=haml=.haml
+--type-set=slim=.slim
 --type-set=sass=.sass,.scss
 --nosql
 --ignore-dir=coverage
 --ignore-dir=public
+--ignore-dir=log
 --smart-case
+--type-add=ctags:match:/tags/
+--noctags

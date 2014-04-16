@@ -5,10 +5,10 @@ alias gaa="git add -A"
 alias gb='git branch '
 alias gca='git commit -a '
 alias gco='git checkout '
-alias gl="git pull"
+alias gl="git smart-log"
 alias gm='git merge '
 alias gp="git push"
-alias gpr='git pull --rebase'
+alias gup='git smart-pull'
 alias gs="git status"
 
 function gc() {
@@ -27,5 +27,8 @@ alias beu="bundle exec unicorn_rails"
 alias zbr="bzr"
 
 function pgrep() {
-  grep -nHr $* .                 
+  grep -nHr $* .
 }
+
+
+alias watch="less -r +GF"
