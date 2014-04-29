@@ -9,6 +9,7 @@
 --ignore-dir=coverage
 --ignore-dir=public
 --ignore-dir=log
+--ignore-dir=tmp
 --smart-case
 --type-add=ctags:match:/tags/
 --noctags
