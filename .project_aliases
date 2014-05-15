@@ -26,6 +26,3 @@ alias cdlc="cd ~/src/github/shevaun/enki"
 alias cdsd="cd ~/src/fx_networks/staff_directory"
 alias cdhw="cd ~/src/cockatoo/Myhealthworks"
 
-#app aliases
-alias gh="github"
-

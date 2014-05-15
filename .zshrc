@@ -13,6 +13,8 @@ ZSH_THEME="shevaun"
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
 
+source /opt/boxen/env.sh
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -31,9 +33,7 @@ source $HOME/.bash_aliases
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew gem rails rvm src bundler osx)
-
-source ~/.zsh/git_diff_release.sh
+plugins=(git gem src bundler osx)
 
 source $ZSH/oh-my-zsh.sh
 # disable correction prompt
