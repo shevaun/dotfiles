@@ -1,20 +1,3 @@
-# git aliases
-
-alias ga='git add '
-alias gaa="git add -A"
-alias gb='git branch '
-alias gca='git commit -a '
-alias gco='git checkout '
-alias gl="git smart-log"
-alias gm='git merge '
-alias gp="git push"
-alias gup='git smart-pull'
-alias gs="git status"
-
-function gc() {
-  git commit -m "$*"
-}
-
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'

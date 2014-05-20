@@ -10,6 +10,7 @@
 --ignore-dir=public
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=.bundle
 --smart-case
 --type-add=ctags:match:/tags/
 --noctags
