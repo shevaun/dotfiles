@@ -13,7 +13,7 @@ ZSH_THEME="shevaun"
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
 
-source /opt/boxen/env.sh
+[[ -s "/opt/boxen/env.sh" ]] && source "/opt/boxen/env.sh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
