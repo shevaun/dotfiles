@@ -1,5 +1,6 @@
 --type-add=ruby=.pp,.prawn,.rake,Gemfile
 --type-add=js=.js.erb,.js.coffee,.js
+--type-add=markdown=.markdown
 --type-set=coffee=.coffee
 --nocss
 --type-set=haml=.haml
@@ -11,6 +12,7 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=.bundle
+--ignore-dir=_site
 --smart-case
 --type-add=ctags:match:/tags/
 --noctags
