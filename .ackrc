@@ -6,13 +6,14 @@
 --type-set=haml=.haml
 --type-set=slim=.slim
 --type-set=sass=.sass,.scss
---nosql
 --ignore-dir=coverage
 --ignore-dir=public
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=.tmp
 --ignore-dir=.bundle
 --ignore-dir=_site
+--ignore-dir=results
 --smart-case
 --type-add=ctags:match:/tags/
 --noctags

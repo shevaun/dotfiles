@@ -1,0 +1,4 @@
+function snipe_processes() {
+  selector=$1
+  kill -9 `ps aux | grep $selector | grep -v grep | awk '{print $2}'`
+}

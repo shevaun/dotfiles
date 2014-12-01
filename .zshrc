@@ -10,6 +10,7 @@ ZSH_THEME="shevaun"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
 
@@ -33,7 +34,7 @@ source $HOME/.bash_aliases
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gem src bundler osx)
+plugins=(git gem src bundler osx rbenv)
 
 source $ZSH/oh-my-zsh.sh
 # disable correction prompt
@@ -46,7 +47,7 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.8/Programs/
 export PATH=$PATH:/usr/local/share/python
-export PATH=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
+export PATH=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
@@ -58,5 +59,9 @@ export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=79000000
+
+export JAVA_HOME=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home
+
+alias rake="noglob bundled_rake"
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh

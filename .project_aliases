@@ -26,3 +26,5 @@ alias cdlc="cd ~/src/github/shevaun/enki"
 alias cdsd="cd ~/src/fx_networks/staff_directory"
 alias cdhw="cd ~/src/cockatoo/Myhealthworks"
 
+#envato projects
+alias cdbx="cd ~/src/our-boxen"
