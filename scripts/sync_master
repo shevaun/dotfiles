@@ -1,0 +1,2 @@
+#!/bin/zsh
+git checkout master && git pull && bundle install --local && zeus start
