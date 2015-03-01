@@ -15,5 +15,3 @@
 --ignore-dir=_site
 --ignore-dir=results
 --smart-case
---type-add=ctags:match:/tags/
---noctags
