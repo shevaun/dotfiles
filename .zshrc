@@ -13,6 +13,7 @@ ZSH_THEME="shevaun"
 
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
+source $HOME/.git_aliases
 
 [[ -s "/opt/boxen/env.sh" ]] && source "/opt/boxen/env.sh"
 
@@ -54,7 +55,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="[%d/%m/%y %T] "
 
-export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_GC_HEAP_INIT_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -62,6 +63,10 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 
 export JAVA_HOME=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home
 
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/shevaun/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
 alias rake="noglob bundled_rake"
 
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh

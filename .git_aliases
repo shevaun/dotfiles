@@ -10,6 +10,7 @@ alias gm='git merge '
 alias gp="git push"
 alias gup='git smart-pull'
 alias gs="git status"
+alias gbk="git buildkite"
 
 function gc() {
   git commit -m "$*"

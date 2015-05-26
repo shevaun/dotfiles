@@ -32,7 +32,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" $CRUNCH_GIT_DIRTY_COLOR✗"
 # Our elements:
 CRUNCH_TIME_="$CRUNCH_TIME_COLOR%T$SHEV_LINE%{$reset_color%}"
 
-RUBY_="$RUBY_COLOR\${\$(current-ruby)}$SHEV_LINE"
+RUBY_="$RUBY_COLOR\${\$(rbenv version-name)}$SHEV_LINE"
 #CRUNCH_RVM_="$RUBY_COLOR\${\$(~/.rvm/bin/rvm-prompt i v g)#ruby-}$SHEV_LINE%{$reset_color%}"
 CRUNCH_DIR_="$CRUNCH_DIR_COLOR%~\$(git_prompt_info) "
 CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR➭ "
