@@ -118,4 +118,5 @@ export DOCKER_TLS_VERIFY=1
 alias rake="noglob bundled_rake"
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -s "/Users/shevaun/scripts/aws.sh" ]] && source "/Users/shevaun/scripts/aws.sh"
 eval "$(rbenv init -)"
