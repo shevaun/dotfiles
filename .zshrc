@@ -117,6 +117,9 @@ export DOCKER_TLS_VERIFY=1
 
 alias rake="noglob bundled_rake"
 
+function zt-diff() { rspec "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "spec/**/*_spec.rb") }
+function zc-diff() { cucumber "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "features/**/*.feature") }
+
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 [[ -s "/Users/shevaun/scripts/aws.sh" ]] && source "/Users/shevaun/scripts/aws.sh"
 eval "$(rbenv init -)"

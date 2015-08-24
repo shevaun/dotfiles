@@ -29,7 +29,7 @@ EOF
 }
 
 echo "$@"
-if [[ "$@" =~ web[0-9]+ ]]; then
+if [[ "$@" =~ (web[0-9]+|cron) ]]; then
    set_color ffffff 330000 0
 elif [[ "$@" =~ db[0-9]+ ]]; then
    set_color ffffff 000033 0
