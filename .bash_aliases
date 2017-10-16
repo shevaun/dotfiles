@@ -25,4 +25,4 @@ function pgrep() {
 alias watch="less -r +GF"
 alias ssh=ssh-background
 
-alias devlog="less -r log/rails_development.0.log"
+alias devlog="less -r log/development.log"

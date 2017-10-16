@@ -10,20 +10,20 @@ set_color() {
   local HEX_BG=$2
   local OPACITY=$3
 
-  local FG_R=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}'`
-  local FG_G=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}'`
-  local FG_B=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}'`
-  local BG_R=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}'`
-  local BG_G=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}'`
-  local BG_B=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}'`
+  local FG_R=$(echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}')
+  local FG_G=$(echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}')
+  local FG_B=$(echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}')
+  local BG_R=$(echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}')
+  local BG_G=$(echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}')
+  local BG_B=$(echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}')
 
   /usr/bin/osascript <<EOF
-tell application "iTerm"
-   tell current session of current terminal
-     # set foreground color to {$FG_R, $FG_G, $FG_B}
-      set background color to {$BG_R, $BG_G, $BG_B}
-    #  set transparency to "$OPACITY"
-   end tell
+tell application "iTerm2"
+  tell current session of current window
+    set foreground color to {$FG_R, $FG_G, $FG_B}
+    set background color to {$BG_R, $BG_G, $BG_B}
+    set transparency to "$OPACITY"
+  end tell
 end tell
 EOF
 }
