@@ -36,7 +36,7 @@ RUBY_="$RUBY_COLOR\${\$(rbenv version-name)}$SHEV_LINE"
 #CRUNCH_RVM_="$RUBY_COLOR\${\$(~/.rvm/bin/rvm-prompt i v g)#ruby-}$SHEV_LINE%{$reset_color%}"
 CRUNCH_DIR_="$CRUNCH_DIR_COLOR%~\$(git_prompt_info) "
 CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR➭ "
-CAT_PROMPT="🐱  "
+CAT_PROMPT="> "
 
 SHEV_HOSTNAME="$SHEV_HOSTNAME_COLOR%m$SHEV_LINE%{$reset_color%}"
 
