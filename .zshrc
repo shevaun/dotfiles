@@ -111,10 +111,6 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 
 export JAVA_HOME=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/shevaun/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
 alias rake="noglob bundled_rake"
 
 function zt-diff() { rspec "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "spec/**/*_spec.rb") }
