@@ -117,4 +117,6 @@ function zt-diff() { rspec "$*" $(git diff --name-only --diff-filter=ACMR origin
 function zc-diff() { cucumber "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "features/**/*.feature") }
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
