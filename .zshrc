@@ -120,3 +120,4 @@ function zc-diff() { cucumber "$*" $(git diff --name-only --diff-filter=ACMR ori
 
 eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
