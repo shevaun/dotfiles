@@ -89,8 +89,6 @@ source $HOME/.project_aliases
 source $HOME/.bash_aliases
 source $HOME/.git_aliases
 
-[[ -s "/opt/boxen/env.sh" ]] && source "/opt/boxen/env.sh"
-
 export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:/usr/local/mysql/bin
