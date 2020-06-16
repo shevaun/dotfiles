@@ -91,10 +91,6 @@ source $HOME/.git_aliases
 
 export PATH=/usr/local/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:/usr/local/mysql/bin
-export PATH=$PATH:/Library/Frameworks/GDAL.framework/Versions/1.8/Programs/
-export PATH=$PATH:/usr/local/share/python
-export PATH=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
@@ -117,6 +113,4 @@ function zc-diff() { cucumber "$*" $(git diff --name-only --diff-filter=ACMR ori
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
-eval "$(nodenv init -)"
