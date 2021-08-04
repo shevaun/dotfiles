@@ -2,9 +2,9 @@
 
 alias ga='git add '
 alias gaa="git add -A"
-alias gb='git branch '
+alias gb='git switch -c '
 alias gca='git commit -a '
-alias gco='git checkout '
+alias gco='git checkout'
 alias gl="git smart-log"
 alias gm='git merge '
 alias gp="git push"
