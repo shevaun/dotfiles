@@ -44,7 +44,7 @@ ZSH_THEME="shevaun"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler osx)
+plugins=(macos)
 
 # User configuration
 
@@ -86,6 +86,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sspec="spring rspec"
+alias sails="spring rails"
 
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
@@ -112,6 +114,10 @@ alias rake="noglob bundled_rake"
 
 function zt-diff() { rspec "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "spec/**/*_spec.rb") }
 function zc-diff() { cucumber "$*" $(git diff --name-only --diff-filter=ACMR origin/master... -- "features/**/*.feature") }
+
+function buildkite-bastion() {
+  aws-vault exec prod-console -- ssh buildkite-bastion
+}
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
