@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -51,6 +53,9 @@ plugins=(macos)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH #for homebrew
+export PATH=$PATH:$HOME/scripts
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -93,9 +98,6 @@ source $HOME/.project_aliases
 source $HOME/.bash_aliases
 source $HOME/.git_aliases
 
-export PATH=/usr/local/bin:$PATH #for homebrew
-export PATH=$PATH:$HOME/scripts
-
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000
 export HISTSIZE=100000
@@ -122,3 +124,4 @@ function buildkite-bastion() {
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
