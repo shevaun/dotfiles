@@ -46,15 +46,17 @@ ZSH_THEME="shevaun"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(macos)
+plugins=(macos bundler monolith)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH #for homebrew
 export PATH=$PATH:$HOME/scripts
+
+export PATH=/Users/shevaun/Library/Python/3.10/bin:$PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -125,3 +127,6 @@ function buildkite-bastion() {
 
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

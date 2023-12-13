@@ -13,7 +13,9 @@ alias zc="zeus cucumber"
 alias zr="zeus rake"
 alias zrg="zeus rake routes | grep"
 alias zm="zeus rake db:migrate db:test:prepare"
-
+alias cfs="CAPYBARA_DRIVER=cuprite rspec"
+# currently, selenium feature spec
+alias sfs="rspec"
 alias migrate="rake db:migrate db:test:prepare"
 
 

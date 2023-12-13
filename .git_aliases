@@ -10,6 +10,7 @@ alias gm='git merge '
 alias gp="git push"
 alias gs="git status"
 alias gbk="git buildkite"
+alias grh="git reset --hard"
 
 function gc() {
   git commit -m "$*"
@@ -38,3 +39,35 @@ function gup() {
     git submodule update --init
   fi
 }
+
+# return the first param unless it is empty, then return second param
+function var_or_default(){
+  if [ -z "$1" ]; then
+    echo $2
+  else
+    echo $1
+  fi
+}
+
+# Get edited files as listed from git, list spec files, grab file path, stat files for last modified time, sort by most recent, grab first, return file path.
+alias rs='git status --porcelain | grep _spec.rb | sed -E "s/ ?[A-Z?]+ +([a-zA-Z_./]+ -> )?//" | xargs stat -f "%m %N" | sort -rn | head -1 | cut -wf2'
+
+# Get most recently edited spec file, find line number of "#runthis"
+alias rtls='grep -n "#runthis" $(rs) | cut -d : -f 1 | head -n 1' # this has a bug which makes it hang if there is no recently edited spec
+
+# Combine most recently edited spec file and line number of "#runthis"
+alias rts='echo "$(rs):$(rtls)"'
+
+# Get list of all spec files changed since origin/main
+alias rrs='{ git diff --name-only origin/main & git ls-files --others --exclude-standard; } | grep _spec.rb | xargs stat -f "%m %N" 2> /dev/null | sort -rn | cut -wf2'
+
+# Run most recently edited spec file
+alias r='echo rspec $(var_or_default "$(rs)" "$(rrs)"); rspec $(var_or_default "$(rs)" "$(rrs)")'
+
+# Run most recently edited spec file at first line with "#runthis"
+alias rt='echo rspec $(var_or_default "$(rts)" "$(rrs)"); rspec $(var_or_default "$(rts)" "$(rrs)")'
+
+# Run most recently edited spec file
+alias rr='echo rspec $(rrs); rspec $(rrs)'
+
+#alias fixup="!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
