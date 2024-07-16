@@ -46,7 +46,7 @@ ZSH_THEME="shevaun"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(macos bundler monolith)
+plugins=(macos bundler)
 
 # User configuration
 
@@ -126,7 +126,7 @@ function buildkite-bastion() {
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 eval "$(rbenv init -)"
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
