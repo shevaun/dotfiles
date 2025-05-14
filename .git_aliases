@@ -36,7 +36,11 @@ function gup() {
   fi
   if echo $log | grep -q frontend/vendor/emojis; then
     echo "emojis updated, running git submodule update"
-    git submodule update --init
+    git submodule update --recursive
+  fi
+  if echo $log | grep -q vendor/site; then
+    echo "site updated, running git submodule update"
+    git submodule update --recursive
   fi
 }
 

@@ -99,6 +99,7 @@ alias sails="spring rails"
 source $HOME/.project_aliases
 source $HOME/.bash_aliases
 source $HOME/.git_aliases
+source $HOME/.jj_aliases
 
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=100000

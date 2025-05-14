@@ -1,0 +1,20 @@
+# Working with bookmarks / branches
+alias jjbc='jj bookmark create'
+alias jjbm='jj bookmark move'
+alias jjbf='jj bookmark forget'
+alias jjbs='jj bookmark set'
+
+# Fetching, pushing
+alias jjgf='jj git fetch'
+alias jjgp='jj git push'
+
+# Rebase revision and descendants onto main
+jjrm() {
+    jj rebase -s "${1:-@}" -d main
+}
+
+# Fetch and rebase the whole current branch onto main
+jjpo() {
+    jj git fetch
+    jj rebase -b "${1:-@}" -d main
+}
