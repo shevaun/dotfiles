@@ -9,6 +9,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # time that oh-my-zsh is loaded.
 ZSH_THEME="shevaun"
 
+export SKIP_CONSOLE_LOGS=true
+export PROCFILE_RUNNER=overmind
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -114,6 +120,7 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export JAVA_HOME=/Library/InternetPlugIns/JavaAppletPlugin.plugin/Contents/Home
+
 
 alias rake="noglob bundled_rake"
 
